@@ -10,6 +10,7 @@ const { Op } = require('sequelize');
 
 
 router.get('/', async (req, res, next) => {
+    //! get all trainers here
 
     res.json('test')
 })
