@@ -9,8 +9,10 @@ const router = express.Router();
 const { Op } = require('sequelize');
 
 
+
 router.get('/', async (req, res, next) => {
-    //! get all trainers here
+    //!conflict creation here.
+    //! get all trainers here Conflicted here
 
     res.json('test')
 })
