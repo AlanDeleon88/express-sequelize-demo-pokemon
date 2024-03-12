@@ -54,6 +54,12 @@ module.exports = {
         gen: 1
       },
       {
+        name: 'Pikachu',
+        type: 'Electric',
+        hasEvo: true,
+        gen: 1
+      },
+      {
         name: 'Froakie',
         type: 'water',
         hasEvo: true,
