@@ -9,7 +9,9 @@ const router = express.Router();
 const { Op } = require('sequelize');
 
 
+
 router.get('/', async (req, res, next) => {
+    //!conflict creation here.
     //! get all trainers here
 
     res.json('test')
