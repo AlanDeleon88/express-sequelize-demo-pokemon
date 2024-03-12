@@ -12,15 +12,17 @@ const { Op } = require('sequelize');
 //! only show columns name, gen, order by type reverse alpha
 
 router.get('/gen/:genNum', async (req, res, next) => {
-    const { genNum } = req.params;
+    const { genNum, randomVar } = req.params;
 
     const pokemonByGen = await Pokemon.findAll({
         where: {
             gen: genNum
         },
-        attributes: ['name', 'type', 'gen'],
+        attributes: ['name', 'type', 'gen', 'createdAt'],
         order: [['type', 'ASC']]
     });
+
+    //! random commment
 
     res.json(pokemonByGen);
 
