@@ -26,9 +26,9 @@ router.get('/gen/:genNum', async (req, res, next) => {
 
 })
 
-router.get('/testers', (req, res) => {
-    
-})
+router.get('test', (req, res) => {
+    return res.send("hi")
+});
 
 //! /type/water get all pokemon that are water type
 //! show name, type, hasEvo, order by name and type
@@ -91,12 +91,12 @@ router.route('/:id')
     })
     .put(async (req, res, next) => {
         const { id } = req.params;
-        const {name} = req.body
+        const { name } = req.body
         //! first need to query for the pokemon we are trying to update
         const pokeToUpdate = await Pokemon.findByPk(id);
 
         if (!pokeToUpdate) {
-           return next(buildError('Could not find pokemon by that name', 'Poke not found', 404))
+            return next(buildError('Could not find pokemon by that name', 'Poke not found', 404))
         }
 
         await pokeToUpdate.update({
@@ -115,7 +115,7 @@ router.route('/:id')
         pokeToRelease.destroy();
 
         res.json({
-            'message' : 'Delete successful'
+            'message': 'Delete successful'
         })
     })
 
