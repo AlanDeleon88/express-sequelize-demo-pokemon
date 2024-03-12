@@ -11,10 +11,17 @@ const { Op } = require('sequelize');
 
 
 router.get('/', async (req, res, next) => {
-    //!conflict creation here.
-    //! get all trainers here Conflicted here
+    const trainers = await Trainer.findAll()
+    res.json(trainers)
+})
 
-    res.json('test')
+router.get('/:id', async (req, res) => {
+    const { id } = req.params;
+
+    const trainer = await Trainer.findByPk(id);
+
+    res.json(trainer)
+    
 })
 
 module.exports = router;
