@@ -26,6 +26,10 @@ router.get('/gen/:genNum', async (req, res, next) => {
 
 })
 
+router.get('/testers', (req, res) => {
+    
+})
+
 //! /type/water get all pokemon that are water type
 //! show name, type, hasEvo, order by name and type
 
