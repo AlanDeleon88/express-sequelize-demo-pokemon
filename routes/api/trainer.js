@@ -21,7 +21,15 @@ router.get('/:id', async (req, res) => {
     const trainer = await Trainer.findByPk(id);
 
     res.json(trainer)
-    
+
+})
+
+router.post('/', async (req, res, next) => {
+    const { name, homeTown } = req.body;
+
+    const newTrainer = await Trainer.create({ name, homeTown });
+
+    res.json(newTrainer);
 })
 
 module.exports = router;
